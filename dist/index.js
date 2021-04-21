@@ -1,0 +1,1 @@
+document.body.appendChild(function(){let e=document.createElement("div");return e.innerHTML="Hello WebPack!",e}());
