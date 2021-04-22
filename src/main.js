@@ -1,7 +1,7 @@
 import "@/assets/css/common.css"
 import gaoxiao from '@/assets/image/效率.jpeg'
 import print from './lib/print'
-import { square, cube } from './lib/math'
+// import { square, cube } from './lib/math'
 
 if (module.hot) {
     module.hot.accept('./lib/print', function() {
@@ -10,7 +10,10 @@ if (module.hot) {
     })
 }
 
-console.log(square)
+let square = () => import(/* webpackChunkName: "print111" */'./lib/math')
+console.log(square().then(res => {
+    console.log(res)
+}))
 
 
 function component() {
