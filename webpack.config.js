@@ -2,8 +2,33 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const webpack = require('webpack');
+const isDev = process.env.NODE_ENV === 'development' ? 1 : 0
 
-
+let plugins = [
+    new webpack.ProgressPlugin(),
+    new HtmlWebpackPlugin({
+        title:'测试',
+        filename:'index.html',
+        template: path.resolve(__dirname, 'public/index.html'),
+        minify:false
+    }),
+    new webpack.HotModuleReplacementPlugin()
+]
+if(!isDev){
+    plugins.splice(1,0,new CleanWebpackPlugin())
+    plugins.push(new CopyPlugin({
+        patterns: [
+            {
+                from: path.resolve(__dirname, 'public'),
+                to: path.resolve(__dirname, 'dist'),
+                globOptions:{
+                    ignore:['index.html']
+                }
+            },
+        ],
+    }))
+}
 module.exports = {
     entry: './src/main.js',
     output: {
@@ -11,6 +36,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     mode:'production',
+    devtool: 'source-map',
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src/'),
@@ -28,27 +54,9 @@ module.exports = {
             use: ['file-loader']
         }]
     },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            title:'测试',
-            filename:'index.html',
-            template: path.resolve(__dirname, 'public/index.html'),
-            minify:false
-        }),
-        new CopyPlugin({
-            patterns: [
-                {
-                    from: path.resolve(__dirname, 'public'),
-                    to: path.resolve(__dirname, 'dist'),
-                    globOptions:{
-                        ignore:['index.html']
-                    }
-                },
-            ],
-        }),
-    ],
+    plugins: plugins,
     devServer:{
         contentBase: path.resolve(__dirname, 'dist'),
+        hot: true
     }
 }
