@@ -25,5 +25,8 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
-  "sideEffects": true
+  "sideEffects": true,
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }

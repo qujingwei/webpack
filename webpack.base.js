@@ -3,9 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: {
+        main:'./src/main.js'
+    },
     output: {
-        filename: "bundle.js",
+        filename: "[name].[contenthash].js",
         chunkFilename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
@@ -14,11 +16,12 @@ module.exports = {
             '@': path.resolve(__dirname, 'src/'),
         }
     },
-    // optimization:{
-    //     splitChunks:{
-    //         chunks: 'all'
-    //     }
-    // },
+    optimization:{
+        splitChunks:{
+            chunks: 'all'
+        },
+        // runtimeChunk: 'single'
+    },
     module: {
         rules: [{
             test: /\.css/,

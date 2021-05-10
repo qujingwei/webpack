@@ -10,10 +10,6 @@ if (module.hot) {
     })
 }
 
-let square = () => import(/* webpackChunkName: "print111" */'./lib/math')
-console.log(square().then(res => {
-    console.log(res)
-}))
 
 
 function component() {
@@ -31,7 +27,13 @@ function component() {
     console.log(1111)
     //button
     btn.innerHTML = '点击这里，然后查看 console！'
-    btn.addEventListener('click',print,false)
+    btn.addEventListener('click',() => {
+        print()
+        let square = () => import(/* webpackChunkName: "print111" */'./lib/math')
+        console.log(square().then(res => {
+            console.log(res)
+        }))
+    },false)
 
     element.appendChild(btn);
     element.appendChild(image)
