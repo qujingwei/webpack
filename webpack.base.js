@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: {
+        main:'./src/main.js',
+        print:'./src/lib/print.js',
+    },
     output: {
         filename: "[name].[contenthash].js",
         chunkFilename: '[name].bundle.js',
@@ -16,7 +19,14 @@ module.exports = {
     },
     optimization:{
         splitChunks:{
-            chunks: 'all'
+            chunks: 'all',
+            // cacheGroups: {
+            //     libs: {
+            //         test: path.resolve('src'),
+            //         priority: 20,
+            //         minChunks: 2, //  minimum common number
+            //     }
+            // }
         },
         runtimeChunk: 'single'
     },

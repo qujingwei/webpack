@@ -1,3 +1,6 @@
+import {fn} from './test'
+
+console.log(fn)
 export function square(x = {}) {
     console.log(11111)
     x.a = 1
@@ -15,6 +18,7 @@ export function cube(x) {
 
 export class cla {
     constructor() {
+        console.log(33333)
         console.log(33333)
     }
 }

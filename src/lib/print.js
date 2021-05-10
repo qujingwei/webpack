@@ -1,3 +1,6 @@
+import {fn} from './test'
+
+console.log(fn)
 import _ from 'lodash';
 
 console.log(
