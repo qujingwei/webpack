@@ -3,9 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack');
 
 module.exports = {
-    entry: {
-        main:'./src/main.js'
-    },
+    entry: './src/main.js',
     output: {
         filename: "[name].[contenthash].js",
         chunkFilename: '[name].bundle.js',
