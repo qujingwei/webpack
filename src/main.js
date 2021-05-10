@@ -29,7 +29,7 @@ function component() {
     btn.innerHTML = '点击这里，然后查看 console！'
     btn.addEventListener('click',() => {
         print()
-        let square = () => import(/* webpackChunkName: "print" */'./lib/print')
+        let square = () => import(/* webpackChunkName: "math" */'./lib/math')
         console.log(square().then(res => {
             console.log(res)
         }))
