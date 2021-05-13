@@ -1,27 +1,2 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["print"],{
-
-/***/ "./src/lib/print.js":
-/*!**************************!*\
-  !*** ./src/lib/print.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return printMe; });\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ \"./src/lib/test.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconsole.log(_test__WEBPACK_IMPORTED_MODULE_0__[\"fn\"])\n\n\nconsole.log(\n    lodash__WEBPACK_IMPORTED_MODULE_1___default.a.join(['Another', 'module', 'loaded!'], ' ')\n)\n\nfunction printMe() {\n    console.log('I get called from print.js!');\n    console.log('I get called from print.js!');\n}\n\n//# sourceURL=webpack:///./src/lib/print.js?");
-
-/***/ }),
-
-/***/ "./src/lib/test.js":
-/*!*************************!*\
-  !*** ./src/lib/test.js ***!
-  \*************************/
-/*! exports provided: fn */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"fn\", function() { return fn; });\nconst fn = () => {\n    console.log(111)\n}\n\n//# sourceURL=webpack:///./src/lib/test.js?");
-
-/***/ })
-
-},[["./src/lib/print.js","runtime","vendors~main~print"]]]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],[function(o,n,e){"use strict";e.d(n,"a",(function(){return t}));const t=()=>{console.log(111)}},function(o,n,e){"use strict";e.r(n),e.d(n,"default",(function(){return s}));var t=e(0),c=e(2),l=e.n(c);function s(){console.log("I get called from print.js!"),console.log("I get called from print.js!")}console.log(l.a.join(["Another","module","loaded!"]," ")),console.log(t.a)}],[[1,0,1]]]);
+//# sourceMappingURL=print.bundle.js.map

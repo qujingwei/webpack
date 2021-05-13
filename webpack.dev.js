@@ -7,7 +7,6 @@ const webpack = require('webpack');
 
 module.exports = merge(base, {
     mode:'development',
-    devtool: 'source-map',
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],

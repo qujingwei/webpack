@@ -5,7 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = merge(base, {
-    mode:'development',
+    mode:'production',
+    devtool: 'source-map',
     plugins: [
         new CleanWebpackPlugin(),
         new CopyPlugin({
