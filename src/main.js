@@ -11,6 +11,7 @@ if (module.hot) {
 }
 
 
+
 function component() {
     let element = document.createElement('div');
     let btn = document.createElement('button');
