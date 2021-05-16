@@ -4,7 +4,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        main:'./src/main.js',
+        main:'./src/main.ts',
         print:'./src/lib/print.js',
     },
     output: {
@@ -13,10 +13,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ],
         alias: {
             '@': path.resolve(__dirname, 'src/'),
-        },
-        extensions: [ '.tsx', '.ts', '.js' ]
+        }
     },
     optimization:{
         splitChunks:{
@@ -41,6 +41,10 @@ module.exports = {
         },{
             test: /\.(woff|woff2|eot|ttf|otf)$/,
             use: ['file-loader']
+        },{
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: /node_modules/
         }]
     },
     plugins: [

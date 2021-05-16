@@ -3,8 +3,8 @@ import gaoxiao from '@/assets/image/效率.jpeg'
 import print from './lib/print'
 // import { square, cube } from './lib/math'
 
-if (module.hot) {
-    module.hot.accept('./lib/print', function() {
+if ((module as any).hot) {
+    (module as any).hot.accept('./lib/print', function() {
         console.log('Accepting the updated printMe module!');
         print();
     })
@@ -18,11 +18,6 @@ function component() {
     //图片
     let image = new Image()
     image.src = gaoxiao
-    console.log(1111)
-    console.log(1111)
-    console.log(1111)
-    console.log(1111)
-    console.log(1111)
     //button
     btn.innerHTML = '点击这里，然后查看 console！'
     btn.addEventListener('click',() => {

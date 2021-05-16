@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{10:function(o,n,c){"use strict";c.r(n),c.d(n,"square",(function(){return s})),c.d(n,"cube",(function(){return u})),c.d(n,"cla",(function(){return r}));var e=c(0);function s(o={}){console.log(11111),o.a=1,o.b=2,u()}console.log(e.a);let t={};function u(o){return console.log(22222),t.a="abc",window.asdf=43,o*o*o}class r{constructor(){console.log(33333),console.log(33333)}}}}]);
-//# sourceMappingURL=math.bundle.js.map
